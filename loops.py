@@ -1,10 +1,25 @@
+from unittest import result
+
+
 def somme_entiers(n):
     """
     Ecrire la fonction somme_entiers, qui prend un entier 'n' en paramètre d'entrée, et qui va calculer la somme de tous les entiers naturels jusqu'à n.
     Exemple: pour n = 10, la fonction doit retourner 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10
     """
     # Ecrire votre code ici
-    pass
+    """
+    i = 0
+    r = 0
+    while (n > i):
+        i+=1
+        r = r + i
+    return r
+    """
+    for i in range((n + 1)):
+        if i == 0:
+            resultat = 0
+        resultat = resultat + i
+    return resultat
 
 def minimum_dans_liste(elements):
     """
@@ -12,7 +27,12 @@ def minimum_dans_liste(elements):
     Exemple: Pour elements = [1, 5, -5, 10], la fonction doit retourner -5
     """
     # Ecrire votre code ici
-    pass
+    for i in range(len(elements)):
+        if (elements[i] < elements[0]):
+            temp = elements[0]
+            elements[0] = elements[i]
+            elements[i] = temp
+    return elements[0]
 
 def inverser_liste(liste):
     """
@@ -20,7 +40,11 @@ def inverser_liste(liste):
     Exemple: Pour liste = [1, 2, 3, 4, 5, 6], la fonction doit retourner [6, 5, 4, 3, 2, 1]
     """
     # Ecrire votre code ici
-    pass
+    for i in range((len(liste) // 2)):
+        temp = liste[i]
+        liste[i] = liste[(len(liste) -1) - i]
+        liste[(len(liste) -1) - i] = temp
+    return liste
 
 def compter_nombre_digits(n):
     """
@@ -28,7 +52,7 @@ def compter_nombre_digits(n):
     Exemple: Pour n = 54378, la fonction doit retourner 5
     """
     # Ecrire votre code ici
-    pass
+    return(len(str(n)))
 
 def decaler_zeros(liste):
     """
@@ -36,7 +60,16 @@ def decaler_zeros(liste):
     Exemple: Pour liste = [45, 0, 7, 12, 98, 0, 0, 1, 54], la fonction doit renvoyer [45, 7, 12, 98, 1, 54, 0, 0, 0]
     """
     # Ecrire votre code ici
-    pass
+    i = 0 
+    count = 0
+    while (i < len(liste)):  
+        if liste[i] == 0 and liste[(len(liste) -1) - count] != 0:
+            liste.append(liste[i])
+            liste.pop(i)
+            count+=1
+            i-=1
+        i+=1    
+    return liste
 
 
 if __name__ == "__main__":

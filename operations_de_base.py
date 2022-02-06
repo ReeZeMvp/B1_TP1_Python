@@ -1,3 +1,7 @@
+from importlib.util import module_for_loader
+from urllib.response import addinfo
+
+
 def variables_entiers():
     """
     Créer une variable nommée 'addition' qui contiendra le résultat de l'addition de 'a' et 'b'
@@ -9,6 +13,12 @@ def variables_entiers():
     """
     a = 15
     b = 34
+    addition = a + b
+    soustraction = a - b
+    multiplication = a * b
+    division = a / b
+    modulo = a % b
+    carre = a ** 2
 
     # Ecrire votre code ici
 
@@ -36,12 +46,12 @@ def variables_boolean():
     y = 10
 
     # Compléter les condition ci-dessous en fonction de l'énnoncé
-    condition1 = __
-    condition2 = __
-    condition3 = __
-    condition4 = __
-    condition5 = __
-    condition6 = __
+    condition1 = x == 5
+    condition2 = x == y
+    condition3 = x != y
+    condition4 = x < y
+    condition5 = x > y
+    condition6 = y >= 10
 
     assert(condition1 is True)
     assert(condition2 is False)
@@ -55,9 +65,9 @@ def variables_boolean():
     condition8 = (x == 5) and (y == 5)
     condition9 = condition1 or condition2
 
-    assert(condition7 is __)
-    assert(condition8 is __)
-    assert(condition9 is __)
+    assert(condition7 is True)
+    assert(condition8 is False)
+    assert(condition9 is True)
     print("Exercice 2 Validé ! ✔")
 
 
@@ -72,10 +82,10 @@ def comparaisons_egal_vs_is():
     c = 1
     d = 1
 
-    assert((a == b) is __)
-    assert((a is b) is __)
-    assert((c == d) is __)
-    assert((c is d) is __)
+    assert((a == b) is True)
+    assert((a is b) is False)
+    assert((c == d) is True)
+    assert((c is d) is True)
     print("Exercice 3 Validé ! ✔")
 
 def listes():
@@ -93,18 +103,19 @@ def listes():
     liste_vide = list()
     liste_vide_2 = []
 
-    ma_liste = __
+    ma_liste = [1, 2, 3]
 
-    premier_element = __
-    dernier_element = __
+    premier_element = ma_liste[0]
+    dernier_element = ma_liste[2]
     
-    slice_deux_derniers_elements = __
-    
-    liste_concat = __
+    #slice_deux_derniers_elements = [ma_liste[1], ma_liste[2]]
+    slice_deux_derniers_elements = ma_liste[1:3]
 
-    in_list = __
+    liste_concat = ma_liste + [4, 5]
 
-    assert((liste_vide == liste_vide_2) is __)
+    in_list = 3 in ma_liste
+
+    assert((liste_vide == liste_vide_2) is True)
     assert(ma_liste == [1, 2, 3])
     assert(premier_element == 1)
     assert(dernier_element == 3)
@@ -122,11 +133,11 @@ def chaines_de_caracteres():
     - Compléter la variable 'chaine2' pour qu'elle contienne 'chaine1' suivi de " mange un barbecue"
     - Compléter la variable 'sous_chaine' pour qu'elle contienne les caractères 7 et 8 de la variable 'chaine1'
     """
-    chaine1 = __
-    chaine_avec_guillemet = __
-    caractere_4 = __
-    chaine2 = __
-    sous_chaine = __
+    chaine1 = "Louise la mouche"
+    chaine_avec_guillemet = 'Louise la "mouche"'
+    caractere_4 = chaine1[3]
+    chaine2 = chaine1 + " mange un barbecue"
+    sous_chaine = chaine1[7] + chaine1[8]
 
 
     assert(chaine1 == "Louise la mouche")

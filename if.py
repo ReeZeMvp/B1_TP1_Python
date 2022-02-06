@@ -3,7 +3,10 @@ def est_pair(x: int):
     Compléter la fonction suivante pour qu'elle retourne 'True' si l'entier 'x' est pair, 'False' sinon
     """
     # Ecrire votre code ici
-    pass
+    if (x % 2 == 0): 
+        return True
+    else:
+        return False
 
 def calcul_taxes(revenus):
     """
@@ -16,7 +19,21 @@ def calcul_taxes(revenus):
      - Si les revenus sont supérieurs à 150000, 45% des revenus
     """
     # Ecrire votre code ici
-    pass
+    if (revenus < 10000):
+        return 0
+    elif (revenus >= 10000 and revenus < 25000):
+        taxe = 11 * revenus / 100
+        return taxe
+    elif (revenus >= 25000 and revenus < 73000):
+        taxe = 30 * revenus / 100
+        return taxe
+    elif (revenus >= 73000 and revenus < 150000):
+        taxe = 41 * revenus / 100
+        return taxe
+    elif (revenus >= 150000):
+        taxe = 45 * revenus / 100
+        return taxe
+    
 
 
 if __name__ == "__main__":
